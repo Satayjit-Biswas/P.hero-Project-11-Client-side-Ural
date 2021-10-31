@@ -20,7 +20,7 @@ const Packagedetails = () => {
     },[]);
     // form work 
     const { register, handleSubmit, reset, formState: { errors } } = useForm({
-        defaultValues: {state:"false",
+        defaultValues: {state: false,
                         package_id:`${id}`
                         }
     });
@@ -39,7 +39,7 @@ const Packagedetails = () => {
         <div className="my-5 Packagedetails">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-8 text-center">
+                    <div className="col-lg-8 col-md-7 text-center">
                             <img src={Img_Link} className="img-fluid mb-4" alt="" />
                                 <h1>{Title}</h1>
                             <div className="Duration">
@@ -53,14 +53,14 @@ const Packagedetails = () => {
                                 {Description}
                             </p>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-lg-4 col-md-5 ">
                         <div className="Order_now_box">
                             <h4>Order Now</h4>
                             <h5 className="mb-3">$ {Price} Only</h5>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <input defaultValue={user.displayName} {...register("name")} />
                                 <input readOnly defaultValue={user.email} {...register("email")} />
-                                <input placeholder="Phone Number" required {...register("phone")} />
+                                <input type="number" placeholder="Phone Number" required {...register("phone")} />
                                 <input placeholder="Address " {...register("address")} />
                                 <button type="submit" className="btn_custom">Presses now</button>
                             </form>

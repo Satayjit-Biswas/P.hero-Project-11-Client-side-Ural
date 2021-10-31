@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const Myorderdata = (props) => {
     const {package_id,state,_id} = props.myorder
@@ -18,10 +16,10 @@ const Myorderdata = (props) => {
             <div className="title my-2">{Title} </div>
             <div className="id my-2">Order-Id: {package_id}</div>
             <div className="orderPrice my-2">${Price}</div>
-            {state === "false"?  <div className="pending my-2">
-                pending
-            </div> : <div className="Approve my-2">
+            {state ?  <div className="Approve my-2">
                 Approve
+            </div> : <div className=" pending my-2">
+                Pending
             </div>}
             <span onClick={() => props.manageorderDelete(_id)}><i className="far fa-trash-alt"></i></span>
         </div>

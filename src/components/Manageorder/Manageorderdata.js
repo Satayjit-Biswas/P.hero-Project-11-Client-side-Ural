@@ -3,7 +3,6 @@ import React from 'react';
 
 const Manageorderdata = (props) => {
     const {_id,package_id,name,email,phone,state} = props.order
-    console.log(props.order.state)
     return (
         
         <div className="order">
@@ -18,7 +17,8 @@ const Manageorderdata = (props) => {
             </div> : <div className="Approve my-2">
                 Approve
             </div>}
-            <span className="my-2" onClick={() => props.stateUpdate(_id)}>Approve</span>
+            {state === false ?  <span className="my-2" onClick={() => props.stateUpdate(_id)}>Approve</span> :
+            <span className="my-2" onClick={() => props.stateUpdate(_id)}>Cancel</span>}
             <span onClick={() => props.manageorderDelete(_id)}><i className="far fa-trash-alt"></i></span>
         </div>
     );

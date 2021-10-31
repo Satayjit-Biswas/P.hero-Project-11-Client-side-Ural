@@ -34,7 +34,7 @@ const Manageorder = () => {
 
     // Update State 
     const stateUpdate =(id)=>{
-        const changeState = orders.find(order=>order._id == id);
+        const changeState = orders.find(order=>order._id === id);
         if(changeState.state === false){
             changeState.state = true;
             const url = `https://shocking-pumpkin-09943.herokuapp.com/orders/${id}`;
@@ -72,7 +72,7 @@ const Manageorder = () => {
                         <div className="row">
                             <div className="col-12">
                                 {
-                                    orders.map((order)=><Manageorderdata order={order} stateUpdate={stateUpdate} manageorderDelete={manageorderDelete}></Manageorderdata>)
+                                    orders.map((order)=><Manageorderdata key={order._id} order={order} stateUpdate={stateUpdate} manageorderDelete={manageorderDelete}></Manageorderdata>)
                                 }
                             </div>
                         </div>

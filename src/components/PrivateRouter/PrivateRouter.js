@@ -5,7 +5,7 @@ import useAuth from '../../hooks/useAuth';
 const PrivateRoute = ({children,...rest}) => {
     const {user,dataComing} = useAuth();
     if(dataComing){
-        return  <div className="spinner-border text-info" role="status">
+        return  <div className="spinner-border text-info text-center" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>
     }

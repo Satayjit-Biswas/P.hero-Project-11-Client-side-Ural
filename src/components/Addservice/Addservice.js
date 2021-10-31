@@ -30,8 +30,8 @@ const Addservice = () => {
                             <input placeholder="Duration Night" required {...register("Duration_Night")} /> 
                         </div>
                         <input type="number" placeholder="Price" required {...register("Price")} />
-                        <textarea placeholder="Description" {...register("Description", { required: true, minLength: 10 })}></textarea>
-                        {errors.Description && <div className="text-danger mb-2">Description length Must be 10 Up !</div>}
+                        <textarea placeholder="Description" {...register("Description", { required: true, minLength: 30 })}></textarea>
+                        {errors.Description && <div className="text-danger mb-2">Description length Must be 30 Up !</div>}
                         <button type="submit" className="btn_custom">Add Service</button>
                     </form>
                 </div>
